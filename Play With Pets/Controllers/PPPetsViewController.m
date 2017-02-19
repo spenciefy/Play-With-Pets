@@ -27,7 +27,7 @@
     
     [[FIRAuth auth] addAuthStateDidChangeListener:^(FIRAuth *_Nonnull auth,
                                                     FIRUser *_Nullable user) {
-        if (![PPAPIManager currentUserID]) {
+        if ([PPAPIManager currentUserID]) {
             [self showLogin];
         } else {
             if (user != nil) {
@@ -165,8 +165,8 @@
 
 - (CGRect)frontPetViewFrame {
     CGFloat horizontalPadding = 20.f;
-    CGFloat topPadding = 90.f;
-    CGFloat bottomPadding = 100.f;
+    CGFloat topPadding = 100.f;
+    CGFloat bottomPadding = 90.f;
     return CGRectMake(horizontalPadding,
                       topPadding,
                       CGRectGetWidth(self.view.frame) - (horizontalPadding * 2),
@@ -244,6 +244,13 @@
     [matchVC setModalPresentationStyle:UIModalPresentationCustom];
     [matchVC setModalTransitionStyle:UIModalTransitionStyleCrossDissolve];
     [self presentViewController:matchVC animated:YES completion:nil];
+}
+
+- (IBAction)showPlayDates:(id)sender {
+    PPPlayDatesViewController *playDatesVC = [self.storyboard instantiateViewControllerWithIdentifier:@"PlaydatesVC"];
+    [playDatesVC setModalPresentationStyle:UIModalPresentationCustom];
+    [playDatesVC setModalTransitionStyle:UIModalTransitionStyleCoverVertical];
+    [self presentViewController:playDatesVC animated:YES completion:nil];
 }
 
 @end

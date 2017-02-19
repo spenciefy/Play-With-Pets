@@ -29,6 +29,8 @@
 		6C4E1BA21E59874C003D8D27 /* PPProfileViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6C4E1BA11E59874C003D8D27 /* PPProfileViewController.m */; };
 		6C4E1BA51E598757003D8D27 /* PPAPIManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 6C4E1BA41E598757003D8D27 /* PPAPIManager.m */; };
 		6C4E1BA81E598765003D8D27 /* UIImage+Play_With_Pets.m in Sources */ = {isa = PBXBuildFile; fileRef = 6C4E1BA71E598765003D8D27 /* UIImage+Play_With_Pets.m */; };
+		6C4E1BAB1E599771003D8D27 /* PPPlayDatesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6C4E1BAA1E599771003D8D27 /* PPPlayDatesViewController.m */; };
+		6C4E1BAE1E599BFB003D8D27 /* PPPlayDate.m in Sources */ = {isa = PBXBuildFile; fileRef = 6C4E1BAD1E599BFB003D8D27 /* PPPlayDate.m */; };
 		6CB6FBEE1E5912E9003D65EF /* MDCGeometry.m in Sources */ = {isa = PBXBuildFile; fileRef = 6CB6FBEB1E5912E9003D65EF /* MDCGeometry.m */; };
 		6CB6FBEF1E5912E9003D65EF /* UIView+MDCBorderedLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = 6CB6FBED1E5912E9003D65EF /* UIView+MDCBorderedLabel.m */; };
 		6CB6FBF11E59337A003D65EF /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 6CB6FBF01E59337A003D65EF /* GoogleService-Info.plist */; };
@@ -78,6 +80,10 @@
 		6C4E1BA41E598757003D8D27 /* PPAPIManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PPAPIManager.m; sourceTree = "<group>"; };
 		6C4E1BA61E598765003D8D27 /* UIImage+Play_With_Pets.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "UIImage+Play_With_Pets.h"; path = "Categories/UIImage+Play_With_Pets.h"; sourceTree = "<group>"; };
 		6C4E1BA71E598765003D8D27 /* UIImage+Play_With_Pets.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "UIImage+Play_With_Pets.m"; path = "Categories/UIImage+Play_With_Pets.m"; sourceTree = "<group>"; };
+		6C4E1BA91E599771003D8D27 /* PPPlayDatesViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PPPlayDatesViewController.h; path = Controllers/PPPlayDatesViewController.h; sourceTree = "<group>"; };
+		6C4E1BAA1E599771003D8D27 /* PPPlayDatesViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PPPlayDatesViewController.m; path = Controllers/PPPlayDatesViewController.m; sourceTree = "<group>"; };
+		6C4E1BAC1E599BFB003D8D27 /* PPPlayDate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PPPlayDate.h; path = Models/PPPlayDate.h; sourceTree = "<group>"; };
+		6C4E1BAD1E599BFB003D8D27 /* PPPlayDate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PPPlayDate.m; path = Models/PPPlayDate.m; sourceTree = "<group>"; };
 		6CB6FBEA1E5912E9003D65EF /* MDCGeometry.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MDCGeometry.h; path = Categories/MDCGeometry.h; sourceTree = "<group>"; };
 		6CB6FBEB1E5912E9003D65EF /* MDCGeometry.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MDCGeometry.m; path = Categories/MDCGeometry.m; sourceTree = "<group>"; };
 		6CB6FBEC1E5912E9003D65EF /* UIView+MDCBorderedLabel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "UIView+MDCBorderedLabel.h"; path = "Categories/UIView+MDCBorderedLabel.h"; sourceTree = "<group>"; };
@@ -174,6 +180,8 @@
 				6C4DE8491E590A620046B0F2 /* PPShelter.m */,
 				6C4DE8381E5907DA0046B0F2 /* PPUser.h */,
 				6C4DE8391E5907DA0046B0F2 /* PPUser.m */,
+				6C4E1BAC1E599BFB003D8D27 /* PPPlayDate.h */,
+				6C4E1BAD1E599BFB003D8D27 /* PPPlayDate.m */,
 			);
 			name = Models;
 			sourceTree = "<group>";
@@ -189,6 +197,8 @@
 				6C4DE8431E5908F90046B0F2 /* PPMatchViewController.m */,
 				6C4DE8451E5909260046B0F2 /* PPPetDetailViewController.h */,
 				6C4DE8461E5909260046B0F2 /* PPPetDetailViewController.m */,
+				6C4E1BA91E599771003D8D27 /* PPPlayDatesViewController.h */,
+				6C4E1BAA1E599771003D8D27 /* PPPlayDatesViewController.m */,
 				6C4E1BA01E59874C003D8D27 /* PPProfileViewController.h */,
 				6C4E1BA11E59874C003D8D27 /* PPProfileViewController.m */,
 			);
@@ -356,9 +366,11 @@
 				6C4DE83D1E5907E90046B0F2 /* PPPetCardView.m in Sources */,
 				6CB6FBEF1E5912E9003D65EF /* UIView+MDCBorderedLabel.m in Sources */,
 				6C4DE81D1E5904920046B0F2 /* AppDelegate.m in Sources */,
+				6C4E1BAB1E599771003D8D27 /* PPPlayDatesViewController.m in Sources */,
 				6C4DE84A1E590A620046B0F2 /* PPShelter.m in Sources */,
 				6C4DE8311E59073C0046B0F2 /* PPPetsViewController.m in Sources */,
 				6C4DE8571E590C510046B0F2 /* UIFont+Play_With_Pets.m in Sources */,
+				6C4E1BAE1E599BFB003D8D27 /* PPPlayDate.m in Sources */,
 				6C4DE85A1E590C6F0046B0F2 /* NSDate+Utilities.m in Sources */,
 				6C4E1BA51E598757003D8D27 /* PPAPIManager.m in Sources */,
 				6C4DE8511E590C140046B0F2 /* NSObject+Play_With_Pets.m in Sources */,
