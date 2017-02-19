@@ -33,9 +33,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "6C4DE8141E5904920046B0F2"
-            BuildableName = "Play With Pets.app"
-            BlueprintName = "Play With Pets"
-            ReferencedContainer = "container:Play With Pets.xcodeproj">
+            BuildableName = "PetPlay.app"
+            BlueprintName = "PetPlay"
+            ReferencedContainer = "container:PetPlay.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
       <AdditionalOptions>
@@ -56,9 +56,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "6C4DE8141E5904920046B0F2"
-            BuildableName = "Play With Pets.app"
-            BlueprintName = "Play With Pets"
-            ReferencedContainer = "container:Play With Pets.xcodeproj">
+            BuildableName = "PetPlay.app"
+            BlueprintName = "PetPlay"
+            ReferencedContainer = "container:PetPlay.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
       <AdditionalOptions>
