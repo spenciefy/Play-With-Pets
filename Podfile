@@ -20,6 +20,7 @@ pod 'SDWebImage', '~> 3.7.3'
 pod 'SVWebViewController'
 pod 'Reveal-SDK', :configurations => ['Debug']
 pod 'IQKeyboardManager'
+pod 'SIAlertView'
 
 end
 

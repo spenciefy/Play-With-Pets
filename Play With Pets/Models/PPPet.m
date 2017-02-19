@@ -10,7 +10,7 @@
 
 @implementation PPPet
 
-- (id)initWithID:(NSString *)id petType:(PPPetType)petType name:(NSString *)name sex:(NSString *)sex age:(NSString *)age size:(NSString *)size breed:(NSString *)breed bio:(NSString *)bio shelter:(PPShelter *)shelter photoURLs:(NSArray *)photoURLs activities:(NSString *)activities location:(NSString *)location {
+- (id)initWithID:(NSString *)id petType:(PPPetType)petType name:(NSString *)name sex:(NSString *)sex age:(NSString *)age size:(NSString *)size breed:(NSString *)breed bio:(NSString *)bio shelter:(PPShelter *)shelter photoURLs:(NSArray *)photoURLs activities:(NSString *)activities location:(NSString *)location email:(NSString *)email {
 
     self = [super init];
     
@@ -27,6 +27,7 @@
         self.photoURLs = photoURLs;
         self.activities = activities;
         self.location = location;
+        self.email = email;
     }
     
     return self;

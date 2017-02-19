@@ -89,6 +89,11 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
+		<key>SIAlertView.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
 		<key>SVProgressHUD.xcscheme</key>
 		<dict>
 			<key>isShown</key>
@@ -102,17 +107,27 @@
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
-		<key>15F4172F13E783EC7D00C429B3BA5861</key>
+		<key>02043DD2959AD38584E795000C085A39</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>23B11AFDFD0AA6C9E7DA1A3E2215786C</key>
+		<key>105AF180C7A3B277B31D2385486F43D0</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
 		<key>23E5940AE031597C9ACCEEC373407A61</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>2F32CA9DAD9EF19B35B067B652F2BADB</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>33A72586FE633CDE8DC730A304FC6926</key>
 		<dict>
 			<key>primary</key>
 			<true/>
@@ -123,11 +138,6 @@
 			<true/>
 		</dict>
 		<key>50FA71AAFC09DBBB034041B32D591845</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>52157D5251CCC67E430E91CEB27E4B34</key>
 		<dict>
 			<key>primary</key>
 			<true/>
@@ -147,7 +157,7 @@
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>6D10D635708789DED281F334DA36FCD5</key>
+		<key>85C628AF43C9BF1146E882388702A615</key>
 		<dict>
 			<key>primary</key>
 			<true/>
@@ -157,7 +167,7 @@
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>935542406F3C2D4A6189642D29250E18</key>
+		<key>94FC6069976137B0A13AD78E1C3CC74D</key>
 		<dict>
 			<key>primary</key>
 			<true/>
@@ -167,17 +177,12 @@
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>991F6E6E8CF41E64693126CAB6F05307</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
 		<key>AFAFB55453D161D2BB5CFB30C68A54D5</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>D519424392B92E9D13E7DB02FAB0DB70</key>
+		<key>C148228B41AB9A63B81543B2D2C87F18</key>
 		<dict>
 			<key>primary</key>
 			<true/>
@@ -188,6 +193,11 @@
 			<true/>
 		</dict>
 		<key>F58CF3B268C937FF221EC44C97C18A9F</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>F66B49E26275963F7D456FCCCD4A0590</key>
 		<dict>
 			<key>primary</key>
 			<true/>

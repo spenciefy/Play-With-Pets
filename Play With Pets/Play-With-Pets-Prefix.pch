@@ -22,6 +22,7 @@
 #import <PureLayout/PureLayout.h>
 #import <PromiseKit/PromiseKit.h>
 #import <SVProgressHUD/SVProgressHUD.h>
+#import <SIAlertView/SIAlertView.h>
 #import <SDWebImage/UIImageView+WebCache.h>
 #import "AppDelegate.h"
 
@@ -45,5 +46,6 @@
 #import "NSDate+Utilities.h"
 #import "MDCGeometry.h"
 #import "UIView+MDCBorderedLabel.h"
+#import "UIImage+Play_With_Pets.h"
 
 #endif /* PrefixHeader_pch */

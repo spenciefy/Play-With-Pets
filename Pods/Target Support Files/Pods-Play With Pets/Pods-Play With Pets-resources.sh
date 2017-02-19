@@ -76,6 +76,7 @@ EOM
 if [[ "$CONFIGURATION" == "Debug" ]]; then
   install_resource "FBSDKCoreKit/FacebookSDKStrings.bundle"
   install_resource "IQKeyboardManager/IQKeyboardManager/Resources/IQKeyboardManager.bundle"
+  install_resource "SIAlertView/SIAlertView/SIAlertView.bundle"
   install_resource "SVProgressHUD/SVProgressHUD/SVProgressHUD.bundle"
   install_resource "SVWebViewController/SVWebViewController/SVWebViewController.bundle/SVWebViewControllerBack.png"
   install_resource "SVWebViewController/SVWebViewController/SVWebViewController.bundle/SVWebViewControllerBack@2x.png"
@@ -92,6 +93,7 @@ fi
 if [[ "$CONFIGURATION" == "Release" ]]; then
   install_resource "FBSDKCoreKit/FacebookSDKStrings.bundle"
   install_resource "IQKeyboardManager/IQKeyboardManager/Resources/IQKeyboardManager.bundle"
+  install_resource "SIAlertView/SIAlertView/SIAlertView.bundle"
   install_resource "SVProgressHUD/SVProgressHUD/SVProgressHUD.bundle"
   install_resource "SVWebViewController/SVWebViewController/SVWebViewController.bundle/SVWebViewControllerBack.png"
   install_resource "SVWebViewController/SVWebViewController/SVWebViewController.bundle/SVWebViewControllerBack@2x.png"

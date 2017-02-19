@@ -27,7 +27,7 @@
     
     [[FIRAuth auth] addAuthStateDidChangeListener:^(FIRAuth *_Nonnull auth,
                                                     FIRUser *_Nullable user) {
-        if (![PPAPIManager currentUserID]) {
+        if ([PPAPIManager currentUserID]) {
             [self showLogin];
         } else {
             if (user != nil) {
@@ -66,7 +66,7 @@
             
             NSString *photoURL = [snapshot.value[@"photo"] stringByReplacingOccurrencesOfString:@"width=60&-pnt" withString:@"width=500&-x"];
             
-            PPPet *pet = [[PPPet alloc] initWithID:snapshot.key petType:PPPetTypeDog name:snapshot.value[@"name"] sex:snapshot.value[@"sex"] age:snapshot.value[@"age"] size:snapshot.value[@"size"] breed:snapshot.value[@"breed"] bio:snapshot.value[@"description"] shelter:nil photoURLs:@[photoURL] activities:snapshot.value[@"activities"] location:@"San Jose"];
+            PPPet *pet = [[PPPet alloc] initWithID:snapshot.key petType:PPPetTypeDog name:snapshot.value[@"name"] sex:snapshot.value[@"sex"] age:snapshot.value[@"age"] size:snapshot.value[@"size"] breed:snapshot.value[@"breed"] bio:snapshot.value[@"description"] shelter:nil photoURLs:@[photoURL] activities:snapshot.value[@"activities"] location:snapshot.value[@"address"] email:snapshot.value[@"contact"]];
             
             if ([snapshot.value[@"animal"] isEqualToString:@"Dog"]) {
                 pet.petType = PPPetTypeDog;
@@ -229,9 +229,10 @@
 
     
     if (direction == MDCSwipeDirectionLeft) {
-        NSLog(@"Photo deleted!");
+        NSLog(@"Swiped left!");
     } else {
-        NSLog(@"Photo saved!");
+        NSLog(@"Swiped right on %@!", self.currentPetView.pet.name);
+        
     }
 }
 

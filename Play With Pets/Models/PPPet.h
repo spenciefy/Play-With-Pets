@@ -28,8 +28,9 @@ typedef NS_ENUM(NSInteger, PPPetType) {
 @property NSArray *photoURLs;
 @property NSString *activities;
 @property NSString *location;
+@property NSString *email;
 
-- (id)initWithID:(NSString *)id petType:(PPPetType)petType name:(NSString *)name sex:(NSString *)sex age:(NSString *)age size:(NSString *)size breed:(NSString *)breed bio:(NSString *)bio shelter:(PPShelter *)shelter photoURLs:(NSArray *)photoURLs activities:(NSString *)activities location:(NSString *)location;
+- (id)initWithID:(NSString *)id petType:(PPPetType)petType name:(NSString *)name sex:(NSString *)sex age:(NSString *)age size:(NSString *)size breed:(NSString *)breed bio:(NSString *)bio shelter:(PPShelter *)shelter photoURLs:(NSArray *)photoURLs activities:(NSString *)activities location:(NSString *)location email:(NSString *)email;
 
 + (NSString *)stringFromSex:(NSString *)size;
 + (NSString *)stringFromSize:(NSString *)size;

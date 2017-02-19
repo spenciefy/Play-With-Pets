@@ -8,6 +8,7 @@
 
 #import "PPAPIManager.h"
 
+#define SERVER_URL @"https://playwithpets.herokuapp.com/send-request"
 NSString * const FLAPIManagerCurrentUserIDKey = @"FLNewAPIManagerCurrentUserIDKey";
 
 @implementation PPAPIManager
@@ -37,8 +38,8 @@ NSString * const FLAPIManagerCurrentUserIDKey = @"FLNewAPIManagerCurrentUserIDKe
              NSString *facebookID = [[FBSDKAccessToken currentAccessToken] userID];
              NSString *userImageURL = [NSString stringWithFormat:@"https://graph.facebook.com/%@/picture?width=400&height=400", [[FBSDKAccessToken currentAccessToken] userID]];
              
-             
-             PPUser *usr = [[PPUser alloc] initWithID:user.id name:user.name age:@"" gender:result[@"gender"] photoURL:userImageURL email:user.email phoneNumber:@"" location:@""];
+#warning lol age is hardcoded
+             PPUser *usr = [[PPUser alloc] initWithID:user.id name:user.name age:@"18" gender:result[@"gender"] photoURL:userImageURL email:user.email phoneNumber:@"" location:user.location];
              
              NSMutableDictionary *userDictionary = [[usr dictionaryRepresentation] mutableCopy];
              
@@ -48,6 +49,8 @@ NSString * const FLAPIManagerCurrentUserIDKey = @"FLNewAPIManagerCurrentUserIDKe
              [defaults setObject:user.id forKey:FLAPIManagerCurrentUserIDKey];
              [defaults synchronize];
              
+             [PPAPIManager shared].currentUser = usr;
+
              completion(nil);
          }
          else{
@@ -55,6 +58,46 @@ NSString * const FLAPIManagerCurrentUserIDKey = @"FLNewAPIManagerCurrentUserIDKe
              completion(nil);
          }
      }];
+}
+
+- (void)sendPlaydateRequestWithPet:(PPPet *)pet startTime:(NSString *)startTime endTime:(NSString *)endTime activity:(NSString *)activity activityLocation:(NSString *)activityLocation{
+    NSURL *identityTokenURL = [NSURL URLWithString:SERVER_URL];
+    NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:identityTokenURL];
+    request.HTTPMethod = @"POST";
+    [request setValue:@"application/json" forHTTPHeaderField:@"Content-Type"];
+    
+    NSDictionary *parameters = @{ @"user_id" : [PPAPIManager shared].currentUser.id,
+                                  @"user_age" : [PPAPIManager shared].currentUser.age,
+                                  @"user_name": [PPAPIManager shared].currentUser.name,
+                                  @"user_location" : [PPAPIManager shared].currentUser.location,
+                                  @"user_image": [PPAPIManager shared].currentUser.photoURL,
+                                  @"user_email" : [PPAPIManager shared].currentUser.email,
+                                  @"user_phone" : @"4086218608",//[PPAPIManager shared].currentUser.phoneNumber,
+                                  @"pet_id" : pet.id,
+                                  @"pet_image" : pet.photoURLs[0],
+                                  @"pet_location" : pet.location,
+                                  @"pet_name" : pet.name,
+                                  @"pet_email" : pet.email,
+                                  @"start_time" : startTime,
+                                  @"end_time" : endTime,
+                                  @"activity" : activity,
+                                  @"activity_location" : activityLocation};
+    
+    NSData *requestBody = [NSJSONSerialization dataWithJSONObject:parameters options:0 error:nil];
+    request.HTTPBody = requestBody;
+    NSLog(@"sending post request with paramenters: %@", parameters);
+    NSURLSessionConfiguration *sessionConfiguration = [NSURLSessionConfiguration ephemeralSessionConfiguration];
+    NSURLSession *session = [NSURLSession sessionWithConfiguration:sessionConfiguration];
+    
+    [[session dataTaskWithRequest:request completionHandler:^(NSData *data, NSURLResponse *response, NSError *error) {
+        if (error) {
+            NSLog(@"error: %@", error.description);
+        } else {
+            NSLog(@"Success, %@", response);
+        }
+    }] resume];
+
+
 }
 
 

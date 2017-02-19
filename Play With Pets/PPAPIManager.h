@@ -9,6 +9,7 @@
 #import <Foundation/Foundation.h>
 
 @class PPUser;
+@class PPPet;
 
 @interface PPAPIManager : NSObject
 
@@ -22,6 +23,7 @@
 
 - (void)createUser:(PPUser *)user completion:(void(^)(NSError *error))completion;
 
+- (void)sendPlaydateRequestWithPet:(PPPet *)pet startTime:(NSString *)startTime endTime:(NSString *)endTime activity:(NSString *)activity activityLocation:(NSString *)activityLocation;
 
 
 @end

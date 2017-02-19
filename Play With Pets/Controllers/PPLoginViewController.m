@@ -7,10 +7,15 @@
 //
 
 #import "PPLoginViewController.h"
+#import <CoreLocation/CoreLocation.h>
 
-@interface PPLoginViewController ()
+@interface PPLoginViewController () <CLLocationManagerDelegate>
 
 @property (strong, nonatomic) IBOutlet UIButton *facebookLoginButton;
+
+@property CLLocationManager *locationManager;
+@property CLLocation *currentLocation;
+@property NSString *userLocation;
 
 @end
 
@@ -22,6 +27,19 @@
     
     self.facebookLoginButton.layer.cornerRadius = 10.f;
     self.facebookLoginButton.layer.masksToBounds = YES;
+    
+    self.locationManager = [[CLLocationManager alloc] init];
+    self.locationManager.delegate = self;
+    NSUInteger code = [CLLocationManager authorizationStatus];
+    if (code == kCLAuthorizationStatusNotDetermined && ([self.locationManager respondsToSelector:@selector(requestAlwaysAuthorization)] || [self.locationManager respondsToSelector:@selector(requestWhenInUseAuthorization)])) {
+        if([[NSBundle mainBundle] objectForInfoDictionaryKey:@"NSLocationWhenInUseUsageDescription"]){
+            [self.locationManager requestWhenInUseAuthorization];
+        } else {
+            NSLog(@"Info.plist does not contain NSLocationAlwaysUsageDescription or NSLocationWhenInUseUsageDescription");
+        }
+    }
+    
+    [self.locationManager startUpdatingLocation];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -56,7 +74,7 @@
                                                        
                                                         [SVProgressHUD dismiss];
                                                        
-                                                       PPUser *usr = [[PPUser alloc] initWithID:userID name:firUser.displayName age:nil gender:nil photoURL:firUser.photoURL.absoluteString email:firUser.email phoneNumber:nil location:nil];
+                                                       PPUser *usr = [[PPUser alloc] initWithID:userID name:firUser.displayName age:nil gender:nil photoURL:firUser.photoURL.absoluteString email:firUser.email phoneNumber:nil location:self.userLocation];
                                                        
                                                         //show pets
                                                        
@@ -72,6 +90,38 @@
                                                    }];
                      }
                  }];
+}
+
+#pragma mark - CLLocationManagerDelegate
+- (void)locationManager:(CLLocationManager *)manager didFailWithError:(NSError *)error
+{
+    NSLog(@"didFailWithError: %@", error);
+    //    UIAlertView *errorAlert = [[UIAlertView alloc]
+    //                 [[FLAPIManager firebaseRef] updateChildValues:nameUpdate];
+    //                  initWithTitle:@"Error" message:@"Failed to Get Your Location" delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil];
+    //    [errorAlert show];
+}
+
+- (void)locationManager:(CLLocationManager *)manager didUpdateToLocation:(CLLocation *)newLocation fromLocation:(CLLocation *)oldLocation
+{
+    if(!self.currentLocation) {
+        self.currentLocation = newLocation;
+        
+        //convert to zip code, then make api call, traverse issues and check the issue ID, find the first person
+        CLGeocoder *geocoder = [[CLGeocoder alloc] init] ;
+        [geocoder reverseGeocodeLocation:self.currentLocation
+                       completionHandler:^(NSArray *placemarks, NSError *error) {
+                           if (error){
+                               NSLog(@"Geocode failed with error: %@", error);
+                               return;
+                           }
+                           CLPlacemark *placemark = [placemarks objectAtIndex:0];
+                           
+                           self.userLocation = [NSString stringWithFormat:@"%@, %@", placemark.locality, placemark.administrativeArea];
+                           NSLog(@"got location: %@", self.userLocation);
+                       }];
+    }
+    
 }
 
 
