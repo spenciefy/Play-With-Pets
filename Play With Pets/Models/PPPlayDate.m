@@ -34,7 +34,12 @@
 #warning doesnt actualy get real pet here
         PPPet *pet = [[PPPet alloc] initWithID:playdateDict[@"pet_id"] petType:PPPetTypeDog name:playdateDict[@"pet_name"] sex:@"M" age:@"Y" size:@"L" breed:@"breed" bio:@"" shelter:nil photoURLs:@[playdateDict[@"pet_image"]] activities:nil location:playdateDict[@"pet_location"] email:playdateDict[@"pet_email"]];
         
-        return [[PPPlayDate alloc] initWithID:id pet:pet status:playdateDict[@"status"] time:playdateDict[@"pet_id"] activity:playdateDict[@"activity"] location:playdateDict[@"activity_location"] shelterPhoneNumber:@"4089128321" shelterName:@"SHELTER NAME"];
+        if(playdateDict[@"start_time"]) {
+        return [[PPPlayDate alloc] initWithID:id pet:pet status:playdateDict[@"status"] time:playdateDict[@"start_time"] activity:playdateDict[@"activity"] location:playdateDict[@"activity_location"] shelterPhoneNumber:@"4089128321" shelterName:@"SHELTER NAME"];
+        } else{
+        return [[PPPlayDate alloc] initWithID:id pet:pet status:playdateDict[@"status"] time:@"Sunday, 2/19 3-7PM" activity:playdateDict[@"activity"] location:playdateDict[@"activity_location"] shelterPhoneNumber:@"4089128321" shelterName:@"SHELTER NAME"];
+        }
+        
     }
     return nil;
 }

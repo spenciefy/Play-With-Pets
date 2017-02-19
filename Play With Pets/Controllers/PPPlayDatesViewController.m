@@ -7,11 +7,13 @@
 //
 
 #import "PPPlayDatesViewController.h"
+#import <MessageUI/MessageUI.h>
 
-@interface PPPlayDatesViewController () <UITableViewDelegate, UITableViewDataSource>
+@interface PPPlayDatesViewController () <UITableViewDelegate, UITableViewDataSource,MFMailComposeViewControllerDelegate>
 
 @property (strong, nonatomic) IBOutlet UITableView *tableView;
 @property NSMutableArray *playdates;
+@property (weak, nonatomic) IBOutlet BTNDropinButton *uberDropinButton;
 
 @end
 
@@ -20,7 +22,18 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
+    self.uberDropinButton.buttonId = @"btn-48a9c24adf3613c6";
+    
+    // Set up your context.
+    BTNLocation *subjectLocation = [BTNLocation locationWithName:@"Home" latitude:[[PPAPIManager shared].currentUser.lat floatValue] longitude:[[PPAPIManager shared].currentUser.lng floatValue]];
+    BTNContext *context = [BTNContext contextWithSubjectLocation:subjectLocation];
+    
+    [self.uberDropinButton prepareWithContext:context completion:^(BOOL isDisplayable) {
+        NSLog(@"Displayable: %@", @(isDisplayable));
+    }];
+    
     [self loadPlayDates];
+    
 }
 
 - (void)loadPlayDates {
@@ -80,7 +93,7 @@
 
     UILabel *timeLabel = (UILabel*) [cell viewWithTag:100];
     timeLabel.adjustsFontSizeToFitWidth = YES;
-    timeLabel.text = playdate.time;
+    timeLabel.text = [NSString stringWithFormat:@"%@", playdate.time];
 
     UIImageView *petImageView = (UIImageView *)[cell viewWithTag:101];
     petImageView.layer.masksToBounds = YES;
@@ -102,18 +115,64 @@
     
     UIButton *animalShelterButton = (UIButton *)[cell viewWithTag:105];
     [animalShelterButton addTarget:self action:@selector(callShelter) forControlEvents:UIControlEventTouchUpInside];
-    
+    UIButton *emailButton = (UIButton *)[cell viewWithTag:106];
+    [emailButton addTarget:self action:@selector(emailShelter) forControlEvents:UIControlEventTouchUpInside];
+
     return cell;
 }
 
 - (void)callShelter {
-    NSString *phNo = @"+4086218608";
+    NSString *phNo = @"+6503671405";
     NSURL *phoneUrl = [NSURL URLWithString:[NSString  stringWithFormat:@"telprompt:%@",phNo]];
     
     if ([[UIApplication sharedApplication] canOpenURL:phoneUrl]) {
         [[UIApplication sharedApplication] openURL:phoneUrl];
     }
 }
+
+- (void)emailShelter {
+
+    NSString *emailTitle = @"Feedback for Pet";
+    NSString *messageBody = @"Hi,\n\n";
+    NSArray *toRecipents = [NSArray arrayWithObject:@"contact@petscare.org"];
+    
+    MFMailComposeViewController *mc = [[MFMailComposeViewController alloc] init];
+    mc.mailComposeDelegate = self;
+    [mc setSubject:emailTitle];
+    [mc setMessageBody:messageBody isHTML:NO];
+    [mc setToRecipients:toRecipents];
+    
+    //    [mc.navigationBar setTitleTextAttributes:[NSDictionary dictionaryWithObject:[UIColor et_greenThemeColor] forKey:NSForegroundColorAttributeName]];
+    [mc.navigationBar setTintColor:[UIColor whiteColor]];
+    
+    [self presentViewController:mc animated:YES completion:^{
+        [[UIApplication sharedApplication] setStatusBarStyle:UIStatusBarStyleLightContent];
+    }];
+    
+}
+
+- (void)mailComposeController:(MFMailComposeViewController *)controller didFinishWithResult:(MFMailComposeResult)result error:(NSError *)error
+{
+    switch (result)
+    {
+        case MFMailComposeResultCancelled:
+            NSLog(@"Mail cancelled");
+            break;
+        case MFMailComposeResultSaved:
+            NSLog(@"Mail saved");
+            break;
+        case MFMailComposeResultSent:
+            NSLog(@"Mail sent");
+            break;
+        case MFMailComposeResultFailed:
+            NSLog(@"Mail sent failure: %@", [error localizedDescription]);
+            break;
+        default:
+            break;
+    }
+    [self dismissViewControllerAnimated:YES completion:NULL];
+}
+
 
 - (IBAction)close:(id)sender {
     [self dismissViewControllerAnimated:YES completion:nil];

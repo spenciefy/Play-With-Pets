@@ -58,6 +58,16 @@
 		<string>fb-messenger-api</string>
 		<string>fbauth2</string>
 		<string>fbshareextension</string>
+		<string>uber</string>
+		<string>drizly</string>
+		<string>button</string>
+		<string>ticketmaster</string>
+		<string>resy</string>
+		<string>airbnb</string>
+		<string>caviar-app</string>
+		<string>hotelsapp</string>
+		<string>doordash</string>
+		<string>jet</string>
 	</array>
 </dict>
 </plist>

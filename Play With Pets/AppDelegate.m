@@ -24,6 +24,18 @@
     [FBSDKAccessToken currentAccessToken];
     [FIRApp configure];
     
+    [[Button sharedButton] configureWithApplicationId:@"app-71e755af44137c91"
+                                               userId:nil
+                                           completion:
+     ^(NSError *error, NSURL *targetURL) {
+         if (!error && targetURL) {
+             NSLog(@"%@", error);
+             // Handle targetURL and navigate your users to the relevant content
+             // as you do in your app delegate url handling methods
+             // (e.g. application:openURL:sourceApplication:annotations:).
+         }
+     }];
+    
     return YES;
 }
 

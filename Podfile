@@ -20,5 +20,6 @@ pod 'SVWebViewController'
 pod 'Reveal-SDK', :configurations => ['Debug']
 pod 'IQKeyboardManager'
 pod 'SIAlertView'
+pod "Button", "~> 4"
 
 end

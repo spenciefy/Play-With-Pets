@@ -77,7 +77,8 @@
                                                         [SVProgressHUD dismiss];
                                                        
                                                        PPUser *usr = [[PPUser alloc] initWithID:userID name:firUser.displayName age:nil gender:nil photoURL:firUser.photoURL.absoluteString email:firUser.email phoneNumber:nil location:self.userLocation lat:self.lat lng:self.lng];
-                                                       
+                                                        [[Button sharedButton] setUserIdentifier:userID];
+
                                                         //show pets
                                                        
                                                        [[PPAPIManager shared] createUser:usr completion:^(NSError *error) {
@@ -119,7 +120,7 @@
                            }
                            CLPlacemark *placemark = [placemarks objectAtIndex:0];
                            self.lat = [NSString stringWithFormat:@"%f", self.currentLocation.coordinate.latitude];
-                           self.lng = [NSString stringWithFormat:@"%f", self.currentLocation.coordinate.latitude];
+                           self.lng = [NSString stringWithFormat:@"%f", self.currentLocation.coordinate.longitude];
 
                            self.userLocation = [NSString stringWithFormat:@"%@, %@", placemark.locality, placemark.administrativeArea];
                            NSLog(@"got location: %@", self.userLocation);

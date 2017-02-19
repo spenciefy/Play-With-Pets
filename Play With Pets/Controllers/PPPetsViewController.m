@@ -39,7 +39,8 @@
                         if(user) {
                             [PPAPIManager shared].currentUser = user;
                             NSLog(@"Loaded user: %@", user.id);
-                            
+                            [[Button sharedButton] setUserIdentifier:user.id];
+
                         }
                     }];
                 });
