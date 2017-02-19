@@ -1,0 +1,46 @@
+//
+//  PrefixHeader.pch
+//  Play With Pets
+//
+//  Created by Spencer Yen on 2/18/17.
+//  Copyright © 2017 Spencer Yen. All rights reserved.
+//
+
+#ifndef PrefixHeader_pch
+#define PrefixHeader_pch
+
+// Include any system framework and library headers here that should be included in all compilation units.
+// You will also need to set the Prefix Header build setting of one or more of your targets to reference this file.
+
+#import <MDCSwipeToChoose/MDCSwipeToChoose.h>
+#import <Firebase/Firebase.h>
+#import <FirebaseAuth/FirebaseAuth.h>
+#import <FirebaseDatabase/FirebaseDatabase.h>
+#import <FBSDKCoreKit/FBSDKCoreKit.h>
+#import <FBSDKLoginKit/FBSDKLoginKit.h>
+#import <AFNetworking/AFNetworking.h>
+#import <PureLayout/PureLayout.h>
+#import <PromiseKit/PromiseKit.h>
+#import <SVProgressHUD/SVProgressHUD.h>
+#import <SDWebImage/UIImageView+WebCache.h>
+#import "AppDelegate.h"
+
+#import "PPPetsViewController.h"
+#import "PPPlayDatesViewController.h"
+#import "PPPetDetailViewController.h"
+
+#import "FLHighlightedButton.h"
+#import "PPPetCardView.h"
+
+#import "PPPet.h"
+#import "PPUser.h"
+#import "PPShelter.h"
+
+#import "UIFont+Play_With_Pets.h"
+#import "UIColor+Play_With_Pets.h"
+#import "NSObject+Play_With_Pets.h"
+#import "NSDate+Utilities.h"
+#import "MDCGeometry.h"
+#import "UIView+MDCBorderedLabel.h"
+
+#endif /* PrefixHeader_pch */
