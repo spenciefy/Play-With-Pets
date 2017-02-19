@@ -22,6 +22,3 @@ pod 'Reveal-SDK', :configurations => ['Debug']
 pod 'IQKeyboardManager'
 
 end
-
-
-

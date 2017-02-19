@@ -1,11 +1,12 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="15G31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="16A323" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -34,7 +35,95 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="32.799999999999997" y="38.23088455772114"/>
+            <point key="canvasLocation" x="-66" y="30"/>
+        </scene>
+        <!--Play Dates View Controller-->
+        <scene sceneID="Dr8-Nx-wkj">
+            <objects>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="o2s-PU-Kgy" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <viewController storyboardIdentifier="matchScreen" id="tII-ky-i4E" customClass="PPPlayDatesViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="CtE-Mi-L1p"/>
+                        <viewControllerLayoutGuide type="bottom" id="8Oy-2d-kMw"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="a5R-I7-gL0">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="SVWebViewControllerActivitySafari.png" translatesAutoresizingMaskIntoConstraints="NO" id="auX-z9-f3z">
+                                <rect key="frame" x="38" y="271" width="125" height="125"/>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="SVWebViewControllerActivityChrome-iPad.png" translatesAutoresizingMaskIntoConstraints="NO" id="8iB-JM-HU6">
+                                <rect key="frame" x="224" y="271" width="125" height="125"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="125" id="NUX-cW-WYq"/>
+                                </constraints>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="It's a Match!" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ur2-pz-kEk">
+                                <rect key="frame" x="97" y="100" width="180" height="45"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="45" id="8E1-JQ-gzo"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" weight="light" pointSize="34"/>
+                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ltf-MS-agt">
+                                <rect key="frame" x="50" y="162" width="274" height="61"/>
+                                <fontDescription key="fontDescription" type="system" weight="light" pointSize="24"/>
+                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Tln-DE-v0w">
+                                <rect key="frame" x="16" y="577" width="343" height="70"/>
+                                <color key="backgroundColor" red="0.0" green="1" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="70" id="1pQ-uG-gWW"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                <state key="normal" title="Go!">
+                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="contactMatch:" destination="tII-ky-i4E" eventType="touchUpInside" id="Syp-j0-mm4"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="bottom" secondItem="Tln-DE-v0w" secondAttribute="bottom" constant="20" symbolic="YES" id="15p-6m-nrX"/>
+                            <constraint firstItem="8iB-JM-HU6" firstAttribute="leading" secondItem="auX-z9-f3z" secondAttribute="trailing" constant="61" id="8kD-qY-jiB"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="8iB-JM-HU6" secondAttribute="trailing" constant="10" id="Al3-ml-dX5"/>
+                            <constraint firstItem="Ltf-MS-agt" firstAttribute="centerX" secondItem="a5R-I7-gL0" secondAttribute="centerX" id="Huq-e9-4vu"/>
+                            <constraint firstItem="8iB-JM-HU6" firstAttribute="top" secondItem="CtE-Mi-L1p" secondAttribute="bottom" constant="251" id="KsB-lE-60X"/>
+                            <constraint firstItem="Ltf-MS-agt" firstAttribute="top" secondItem="ur2-pz-kEk" secondAttribute="bottom" constant="17" id="LP9-7B-erN"/>
+                            <constraint firstItem="Tln-DE-v0w" firstAttribute="centerX" secondItem="Ltf-MS-agt" secondAttribute="centerX" id="Lnk-qF-kMx"/>
+                            <constraint firstItem="8iB-JM-HU6" firstAttribute="bottom" secondItem="auX-z9-f3z" secondAttribute="bottom" id="ODk-G0-aTj"/>
+                            <constraint firstItem="ur2-pz-kEk" firstAttribute="leading" secondItem="a5R-I7-gL0" secondAttribute="leadingMargin" constant="81" id="OxY-B2-FRZ"/>
+                            <constraint firstItem="auX-z9-f3z" firstAttribute="leading" secondItem="a5R-I7-gL0" secondAttribute="leadingMargin" constant="22" id="Rl8-C3-NWm"/>
+                            <constraint firstItem="8iB-JM-HU6" firstAttribute="top" secondItem="Ltf-MS-agt" secondAttribute="bottom" constant="48" id="bKW-Yg-UMn"/>
+                            <constraint firstItem="ur2-pz-kEk" firstAttribute="centerX" secondItem="a5R-I7-gL0" secondAttribute="centerX" id="bLh-FG-Rzx"/>
+                            <constraint firstItem="Tln-DE-v0w" firstAttribute="leading" secondItem="a5R-I7-gL0" secondAttribute="leadingMargin" id="cFT-uk-w74"/>
+                            <constraint firstItem="8iB-JM-HU6" firstAttribute="centerY" secondItem="a5R-I7-gL0" secondAttribute="centerY" id="gYo-yw-ayv"/>
+                            <constraint firstItem="ur2-pz-kEk" firstAttribute="top" secondItem="CtE-Mi-L1p" secondAttribute="bottom" constant="80" id="hc1-sB-t1F"/>
+                            <constraint firstItem="Ltf-MS-agt" firstAttribute="leading" secondItem="a5R-I7-gL0" secondAttribute="leadingMargin" constant="34" id="nmh-Kq-SVr"/>
+                            <constraint firstItem="8iB-JM-HU6" firstAttribute="top" secondItem="auX-z9-f3z" secondAttribute="top" id="tuN-1c-iZz"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="gOh-xl-SmQ"/>
+                    <connections>
+                        <outlet property="matchDescriptionLabel" destination="Ltf-MS-agt" id="gkC-h0-4qs"/>
+                        <outlet property="matchImageView" destination="8iB-JM-HU6" id="7xq-OI-705"/>
+                        <outlet property="meetButton" destination="Tln-DE-v0w" id="Xsr-r0-W34"/>
+                        <outlet property="profileImageView" destination="auX-z9-f3z" id="EAh-1e-f4H"/>
+                    </connections>
+                </viewController>
+            </objects>
+            <point key="canvasLocation" x="694" y="29"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="SVWebViewControllerActivityChrome-iPad.png" width="76" height="76"/>
+        <image name="SVWebViewControllerActivitySafari.png" width="60" height="60"/>
+    </resources>
 </document>
