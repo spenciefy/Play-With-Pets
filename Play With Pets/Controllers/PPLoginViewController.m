@@ -16,6 +16,8 @@
 @property CLLocationManager *locationManager;
 @property CLLocation *currentLocation;
 @property NSString *userLocation;
+@property NSString *lat;
+@property NSString *lng;
 
 @end
 
@@ -74,7 +76,7 @@
                                                        
                                                         [SVProgressHUD dismiss];
                                                        
-                                                       PPUser *usr = [[PPUser alloc] initWithID:userID name:firUser.displayName age:nil gender:nil photoURL:firUser.photoURL.absoluteString email:firUser.email phoneNumber:nil location:self.userLocation];
+                                                       PPUser *usr = [[PPUser alloc] initWithID:userID name:firUser.displayName age:nil gender:nil photoURL:firUser.photoURL.absoluteString email:firUser.email phoneNumber:nil location:self.userLocation lat:self.lat lng:self.lng];
                                                        
                                                         //show pets
                                                        
@@ -116,7 +118,9 @@
                                return;
                            }
                            CLPlacemark *placemark = [placemarks objectAtIndex:0];
-                           
+                           self.lat = [NSString stringWithFormat:@"%f", self.currentLocation.coordinate.latitude];
+                           self.lng = [NSString stringWithFormat:@"%f", self.currentLocation.coordinate.latitude];
+
                            self.userLocation = [NSString stringWithFormat:@"%@, %@", placemark.locality, placemark.administrativeArea];
                            NSLog(@"got location: %@", self.userLocation);
                        }];

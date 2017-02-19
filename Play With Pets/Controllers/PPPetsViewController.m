@@ -27,7 +27,7 @@
     
     [[FIRAuth auth] addAuthStateDidChangeListener:^(FIRAuth *_Nonnull auth,
                                                     FIRUser *_Nullable user) {
-        if ([PPAPIManager currentUserID]) {
+        if (![PPAPIManager currentUserID]) {
             [self showLogin];
         } else {
             if (user != nil) {
