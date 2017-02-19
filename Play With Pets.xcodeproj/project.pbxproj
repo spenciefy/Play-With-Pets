@@ -17,7 +17,7 @@
 		6C4DE8341E5907AF0046B0F2 /* PPPet.m in Sources */ = {isa = PBXBuildFile; fileRef = 6C4DE8331E5907AF0046B0F2 /* PPPet.m */; };
 		6C4DE83A1E5907DA0046B0F2 /* PPUser.m in Sources */ = {isa = PBXBuildFile; fileRef = 6C4DE8391E5907DA0046B0F2 /* PPUser.m */; };
 		6C4DE83D1E5907E90046B0F2 /* PPPetCardView.m in Sources */ = {isa = PBXBuildFile; fileRef = 6C4DE83C1E5907E90046B0F2 /* PPPetCardView.m */; };
-		6C4DE8441E5908F90046B0F2 /* PPPlayDatesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6C4DE8431E5908F90046B0F2 /* PPPlayDatesViewController.m */; };
+		6C4DE8441E5908F90046B0F2 /* PPMatchViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6C4DE8431E5908F90046B0F2 /* PPMatchViewController.m */; };
 		6C4DE8471E5909260046B0F2 /* PPPetDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6C4DE8461E5909260046B0F2 /* PPPetDetailViewController.m */; };
 		6C4DE84A1E590A620046B0F2 /* PPShelter.m in Sources */ = {isa = PBXBuildFile; fileRef = 6C4DE8491E590A620046B0F2 /* PPShelter.m */; };
 		6C4DE84D1E590BDB0046B0F2 /* UIColor+Play_With_Pets.m in Sources */ = {isa = PBXBuildFile; fileRef = 6C4DE84C1E590BDB0046B0F2 /* UIColor+Play_With_Pets.m */; };
@@ -54,8 +54,8 @@
 		6C4DE83B1E5907E90046B0F2 /* PPPetCardView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PPPetCardView.h; path = Views/PPPetCardView.h; sourceTree = "<group>"; };
 		6C4DE83C1E5907E90046B0F2 /* PPPetCardView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PPPetCardView.m; path = Views/PPPetCardView.m; sourceTree = "<group>"; };
 		6C4DE8411E5908390046B0F2 /* Play-With-Pets-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Play-With-Pets-Prefix.pch"; sourceTree = "<group>"; };
-		6C4DE8421E5908F90046B0F2 /* PPPlayDatesViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PPPlayDatesViewController.h; path = Controllers/PPPlayDatesViewController.h; sourceTree = "<group>"; };
-		6C4DE8431E5908F90046B0F2 /* PPPlayDatesViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PPPlayDatesViewController.m; path = Controllers/PPPlayDatesViewController.m; sourceTree = "<group>"; };
+		6C4DE8421E5908F90046B0F2 /* PPMatchViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PPMatchViewController.h; path = Controllers/PPMatchViewController.h; sourceTree = "<group>"; };
+		6C4DE8431E5908F90046B0F2 /* PPMatchViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PPMatchViewController.m; path = Controllers/PPMatchViewController.m; sourceTree = "<group>"; };
 		6C4DE8451E5909260046B0F2 /* PPPetDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PPPetDetailViewController.h; path = Controllers/PPPetDetailViewController.h; sourceTree = "<group>"; };
 		6C4DE8461E5909260046B0F2 /* PPPetDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PPPetDetailViewController.m; path = Controllers/PPPetDetailViewController.m; sourceTree = "<group>"; };
 		6C4DE8481E590A620046B0F2 /* PPShelter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PPShelter.h; path = Models/PPShelter.h; sourceTree = "<group>"; };
@@ -185,8 +185,8 @@
 				6C4E1B9E1E598742003D8D27 /* PPLoginViewController.m */,
 				6C4DE82F1E59073C0046B0F2 /* PPPetsViewController.h */,
 				6C4DE8301E59073C0046B0F2 /* PPPetsViewController.m */,
-				6C4DE8421E5908F90046B0F2 /* PPPlayDatesViewController.h */,
-				6C4DE8431E5908F90046B0F2 /* PPPlayDatesViewController.m */,
+				6C4DE8421E5908F90046B0F2 /* PPMatchViewController.h */,
+				6C4DE8431E5908F90046B0F2 /* PPMatchViewController.m */,
 				6C4DE8451E5909260046B0F2 /* PPPetDetailViewController.h */,
 				6C4DE8461E5909260046B0F2 /* PPPetDetailViewController.m */,
 				6C4E1BA01E59874C003D8D27 /* PPProfileViewController.h */,
@@ -350,7 +350,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				6C4E1BA21E59874C003D8D27 /* PPProfileViewController.m in Sources */,
-				6C4DE8441E5908F90046B0F2 /* PPPlayDatesViewController.m in Sources */,
+				6C4DE8441E5908F90046B0F2 /* PPMatchViewController.m in Sources */,
 				6C4DE8471E5909260046B0F2 /* PPPetDetailViewController.m in Sources */,
 				6C4E1B9F1E598742003D8D27 /* PPLoginViewController.m in Sources */,
 				6C4DE83D1E5907E90046B0F2 /* PPPetCardView.m in Sources */,

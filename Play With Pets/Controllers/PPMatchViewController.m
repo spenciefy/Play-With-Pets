@@ -6,13 +6,13 @@
 //  Copyright © 2017 Spencer Yen. All rights reserved.
 //
 
-#import "PPPlayDatesViewController.h"
+#import "PPMatchViewController.h"
 
-@interface PPPlayDatesViewController ()
+@interface PPMatchViewController ()
 
 @end
 
-@implementation PPPlayDatesViewController
+@implementation PPMatchViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -27,6 +27,7 @@
     
     //update ui
     self.matchDescriptionLabel.text = [NSString stringWithFormat:@"You and %@ are perfect for each other!", self.matchedPet.name];
+    [self.matchDescriptionLabel sizeToFit];
     [self.matchImageView sd_setImageWithURL:[NSURL URLWithString:self.matchedPet.photoURLs[0]]];
     
     self.profileImageView.layer.cornerRadius = self.profileImageView.frame.size.width/2;
@@ -49,10 +50,14 @@
     
 }
 
+- (IBAction)closeButton:(id)sender
+{
+    [self dismissViewControllerAnimated:YES completion:nil];
+}
+
 - (void) setupMatchScreenWithPet:(PPPet *) pet
 {
     self.matchedPet = pet;
-    [self.profileImageView setImage:[UIImage imageNamed:@"me.png"]];
 }
 
 - (void)didReceiveMemoryWarning {

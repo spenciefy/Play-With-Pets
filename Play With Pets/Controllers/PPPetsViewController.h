@@ -7,7 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "PPPlayDatesViewController.h"
+#import "PPMatchViewController.h"
 
 @interface PPPetsViewController : UIViewController
 

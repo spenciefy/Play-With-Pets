@@ -28,7 +28,7 @@
 
 #import "PPLoginViewController.h"
 #import "PPPetsViewController.h"
-#import "PPPlayDatesViewController.h"
+#import "PPMatchViewController.h"
 #import "PPPetDetailViewController.h"
 #import "PPAPIManager.h"
 

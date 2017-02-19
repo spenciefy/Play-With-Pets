@@ -9,7 +9,7 @@
 #import <UIKit/UIKit.h>
 #import "PPPet.h"
 
-@interface PPPlayDatesViewController : UIViewController
+@interface PPMatchViewController : UIViewController
 
 @property (strong, nonatomic) PPPet *matchedPet;
 

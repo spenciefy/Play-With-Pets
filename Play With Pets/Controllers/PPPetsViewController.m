@@ -239,7 +239,7 @@
 
 - (void) showMatchScreen
 {
-    PPPlayDatesViewController *matchVC = [self.storyboard instantiateViewControllerWithIdentifier:@"matchScreen"];
+    PPMatchViewController *matchVC = [self.storyboard instantiateViewControllerWithIdentifier:@"matchScreen"];
     [matchVC setupMatchScreenWithPet:self.currentPetView.pet];
     [matchVC setModalPresentationStyle:UIModalPresentationCustom];
     [matchVC setModalTransitionStyle:UIModalTransitionStyleCrossDissolve];
