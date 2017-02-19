@@ -37,9 +37,9 @@
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Play With Pets" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="R7L-EI-7Ie">
-                                <rect key="frame" x="66" y="28" width="242" height="38"/>
+                                <rect key="frame" x="66" y="30" width="242" height="48"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="38" id="y34-G1-ZPz"/>
+                                    <constraint firstAttribute="height" constant="48" id="y34-G1-ZPz"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" name="Noteworthy-Bold" family="Noteworthy" pointSize="28"/>
                                 <color key="textColor" red="0.78931691680000005" green="0.39805835810000001" blue="0.97647058819999999" alpha="1" colorSpace="calibratedRGB"/>
@@ -53,7 +53,7 @@
                             <constraint firstItem="R7L-EI-7Ie" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="50" id="OXN-OG-e1a"/>
                             <constraint firstItem="n5R-DJ-dmG" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="RZa-RA-jZH"/>
                             <constraint firstItem="n5R-DJ-dmG" firstAttribute="centerX" secondItem="R7L-EI-7Ie" secondAttribute="centerX" id="YS4-2Q-NzW"/>
-                            <constraint firstItem="R7L-EI-7Ie" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="8" id="y9c-PW-0im"/>
+                            <constraint firstItem="R7L-EI-7Ie" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="10" id="y9c-PW-0im"/>
                         </constraints>
                     </view>
                     <connections>
@@ -272,34 +272,38 @@
                                         </tableViewCellContentView>
                                     </tableViewCell>
                                 </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="zoS-eA-AW8" id="eFa-IR-cay"/>
+                                    <outlet property="delegate" destination="zoS-eA-AW8" id="vOT-8l-28m"/>
+                                </connections>
                             </tableView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Play Dates" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rGq-M2-CQH">
+                                <rect key="frame" x="92" y="16" width="190" height="48"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="48" id="Wlu-9x-jpa"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="Noteworthy-Bold" family="Noteworthy" pointSize="28"/>
+                                <color key="textColor" red="0.78931691680000005" green="0.39805835810000001" blue="0.97647058819999999" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Qbf-5D-kSh">
-                                <rect key="frame" x="16" y="29" width="49" height="34"/>
+                                <rect key="frame" x="16" y="23" width="49" height="34"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="18"/>
                                 <state key="normal" title="Close"/>
                                 <connections>
                                     <action selector="close:" destination="zoS-eA-AW8" eventType="touchUpInside" id="6d7-Ff-6fK"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Play Dates" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rGq-M2-CQH">
-                                <rect key="frame" x="92" y="23" width="190" height="38"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="38" id="Wlu-9x-jpa"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" name="Noteworthy-Bold" family="Noteworthy" pointSize="28"/>
-                                <color key="textColor" red="0.78931691680000005" green="0.39805835810000001" blue="0.97647058819999999" alpha="1" colorSpace="calibratedRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstAttribute="trailingMargin" secondItem="rGq-M2-CQH" secondAttribute="trailing" constant="77" id="0Ww-so-x12"/>
-                            <constraint firstItem="rGq-M2-CQH" firstAttribute="top" secondItem="xWE-au-taf" secondAttribute="bottom" constant="3" id="1JR-qP-6Z8"/>
+                            <constraint firstItem="rGq-M2-CQH" firstAttribute="top" secondItem="xWE-au-taf" secondAttribute="bottom" constant="-4" id="1JR-qP-6Z8"/>
                             <constraint firstItem="rGq-M2-CQH" firstAttribute="leading" secondItem="Qbf-5D-kSh" secondAttribute="trailing" constant="27" id="2Jh-zD-xgI"/>
                             <constraint firstItem="E9f-hz-rBp" firstAttribute="leading" secondItem="9JQ-6O-LNv" secondAttribute="leading" id="4Qg-D9-2Ee"/>
                             <constraint firstItem="rGq-M2-CQH" firstAttribute="centerX" secondItem="E9f-hz-rBp" secondAttribute="centerX" id="E4y-do-K2t"/>
-                            <constraint firstItem="rGq-M2-CQH" firstAttribute="bottom" secondItem="Qbf-5D-kSh" secondAttribute="bottom" constant="-2" id="U1B-1y-8Rj"/>
-                            <constraint firstItem="E9f-hz-rBp" firstAttribute="top" secondItem="rGq-M2-CQH" secondAttribute="bottom" constant="10" id="XR6-ef-oJr"/>
+                            <constraint firstItem="rGq-M2-CQH" firstAttribute="bottom" secondItem="Qbf-5D-kSh" secondAttribute="bottom" constant="7" id="U1B-1y-8Rj"/>
+                            <constraint firstItem="E9f-hz-rBp" firstAttribute="top" secondItem="rGq-M2-CQH" secondAttribute="bottom" constant="7" id="XR6-ef-oJr"/>
                             <constraint firstItem="UNJ-qb-so0" firstAttribute="top" secondItem="E9f-hz-rBp" secondAttribute="bottom" id="hkU-Uz-8eX"/>
                             <constraint firstAttribute="trailing" secondItem="E9f-hz-rBp" secondAttribute="trailing" id="qqB-mn-DD9"/>
                         </constraints>

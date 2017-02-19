@@ -8,7 +8,7 @@
 
 #import "PPPlayDatesViewController.h"
 
-@interface PPPlayDatesViewController ()
+@interface PPPlayDatesViewController () <UITableViewDelegate, UITableViewDataSource>
 
 @property (strong, nonatomic) IBOutlet UITableView *tableView;
 @property NSMutableArray *playdates;
@@ -83,6 +83,7 @@
     timeLabel.text = playdate.time;
 
     UIImageView *petImageView = (UIImageView *)[cell viewWithTag:101];
+    petImageView.layer.masksToBounds = YES;
     petImageView.contentMode = UIViewContentModeScaleAspectFill;
     [petImageView sd_setImageWithURL:[NSURL URLWithString:playdate.pet.photoURLs[0]]];
     
@@ -101,8 +102,6 @@
     
     UIButton *animalShelterButton = (UIButton *)[cell viewWithTag:105];
     [animalShelterButton addTarget:self action:@selector(callShelter) forControlEvents:UIControlEventTouchUpInside];
-    
-    
     
     return cell;
 }
