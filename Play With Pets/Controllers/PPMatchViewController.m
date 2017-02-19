@@ -48,7 +48,7 @@
 
 - (IBAction)contactMatch:(id)sender
 {
-    
+     [[PPAPIManager shared] sendPlaydateRequestWithPet:self.matchedPet startTime:@"Sunday, 2/18 11:00 AM" endTime:@"Sunday, 2/18 3:00 PM" activity:@"Hike" activityLocation:@"Stanford Dish"];
 }
 
 - (IBAction)closeButton:(id)sender

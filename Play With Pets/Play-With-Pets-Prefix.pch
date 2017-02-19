@@ -31,6 +31,7 @@
 #import "PPMatchViewController.h"
 #import "PPPetDetailViewController.h"
 #import "PPAPIManager.h"
+#import "PPPlayDatesViewController.h"
 
 #import "FLHighlightedButton.h"
 #import "PPPetCardView.h"
@@ -39,6 +40,7 @@
 #import "PPPet.h"
 #import "PPUser.h"
 #import "PPShelter.h"
+#import "PPPlayDate.h"
 
 #import "UIFont+Play_With_Pets.h"
 #import "UIColor+Play_With_Pets.h"

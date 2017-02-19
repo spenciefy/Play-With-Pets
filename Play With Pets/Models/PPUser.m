@@ -10,7 +10,7 @@
 
 @implementation PPUser
 
-- (id)initWithID:(NSString *)id name:(NSString *)name age:(NSString *)age gender:(NSString *)gender photoURL:(NSString *)photoURL email:(NSString *)email phoneNumber:(NSString *)phoneNumber location:(NSString *)location {
+- (id)initWithID:(NSString *)id name:(NSString *)name age:(NSString *)age gender:(NSString *)gender photoURL:(NSString *)photoURL email:(NSString *)email phoneNumber:(NSString *)phoneNumber location:(NSString *)location lat:(NSString *)lat lng:(NSString *)lng {
     self = [super init];
     
     if(self) {
@@ -22,6 +22,8 @@
         self.email = email;
         self.phoneNumber = phoneNumber;
         self.location = location;
+        self.lat = lat;
+        self.lng = lng;
     }
     
     return self;
@@ -32,7 +34,7 @@
     [[[[PPAPIManager firebaseRef] child:@"users"] child:userID] observeSingleEventOfType:FIRDataEventTypeValue withBlock:^(FIRDataSnapshot * _Nonnull snapshot) {
         if(snapshot.value != [NSNull null]) {
             
-            PPUser *user = [[PPUser alloc] initWithID:snapshot.value[@"id"] name:snapshot.value[@"name"] age:snapshot.value[@"age"] gender:snapshot.value[@"gender"] photoURL:snapshot.value[@"photoURL"] email:snapshot.value[@"email"] phoneNumber:snapshot.value[@"phoneNumber"] location:snapshot.value[@"location"]];
+            PPUser *user = [[PPUser alloc] initWithID:snapshot.value[@"id"] name:snapshot.value[@"name"] age:snapshot.value[@"age"] gender:snapshot.value[@"gender"] photoURL:snapshot.value[@"photoURL"] email:snapshot.value[@"email"] phoneNumber:snapshot.value[@"phoneNumber"] location:snapshot.value[@"location"] lat:snapshot.value[@"lat"] lng:snapshot.value[@"lng"]];
             
             completion(user);
         } else {

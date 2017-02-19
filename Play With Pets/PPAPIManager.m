@@ -39,7 +39,7 @@ NSString * const FLAPIManagerCurrentUserIDKey = @"FLNewAPIManagerCurrentUserIDKe
              NSString *userImageURL = [NSString stringWithFormat:@"https://graph.facebook.com/%@/picture?width=400&height=400", [[FBSDKAccessToken currentAccessToken] userID]];
              
 #warning lol age is hardcoded
-             PPUser *usr = [[PPUser alloc] initWithID:user.id name:user.name age:@"18" gender:result[@"gender"] photoURL:userImageURL email:user.email phoneNumber:@"" location:user.location];
+             PPUser *usr = [[PPUser alloc] initWithID:user.id name:user.name age:@"18" gender:result[@"gender"] photoURL:userImageURL email:user.email phoneNumber:@"" location:user.location lat:user.lat lng:user.lng];
              
              NSMutableDictionary *userDictionary = [[usr dictionaryRepresentation] mutableCopy];
              
