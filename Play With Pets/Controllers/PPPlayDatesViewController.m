@@ -94,11 +94,11 @@
     UILabel *descriptionLabel = (UILabel*) [cell viewWithTag:103];
     descriptionLabel.adjustsFontSizeToFitWidth = YES;
     NSString *breedString = [NSString stringWithFormat:@"%@ • %@ • %@", playdate.pet.breed, playdate.pet.age, [PPPet stringFromSize:playdate.pet.size]];
-    descriptionLabel.text = breedString;
+    descriptionLabel.text = @"San Jose, CA";
     
     UILabel *locationLabel = (UILabel*) [cell viewWithTag:104];
     locationLabel.adjustsFontSizeToFitWidth = YES;
-    locationLabel.text = playdate.location;
+    locationLabel.text = playdate.status;
     
     UIButton *animalShelterButton = (UIButton *)[cell viewWithTag:105];
     [animalShelterButton addTarget:self action:@selector(callShelter) forControlEvents:UIControlEventTouchUpInside];
