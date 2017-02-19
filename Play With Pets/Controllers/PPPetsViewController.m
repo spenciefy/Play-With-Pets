@@ -190,6 +190,15 @@
 
 // This is called then a user swipes the view fully left or right.
 - (void)view:(UIView *)view wasChosenWithDirection:(MDCSwipeDirection)direction {
+    if (direction == MDCSwipeDirectionLeft) {
+        //swiped left
+        NSLog(@"Photo deleted!");
+    } else {
+        //swiped right
+        NSLog(@"Match!");
+        [self showMatchScreen];
+    }
+    
     self.frontPetView = self.backPetView;
 
     if([self.pets count] > 2){
@@ -226,15 +235,15 @@
     } else {
         self.backPetView = nil;
     }
-
-    
-    if (direction == MDCSwipeDirectionLeft) {
-        NSLog(@"Swiped left!");
-    } else {
-        NSLog(@"Swiped right on %@!", self.currentPetView.pet.name);
-        
-    }
 }
 
+- (void) showMatchScreen
+{
+    PPPlayDatesViewController *matchVC = [self.storyboard instantiateViewControllerWithIdentifier:@"matchScreen"];
+    [matchVC setupMatchScreenWithPet:self.currentPetView.pet];
+    [matchVC setModalPresentationStyle:UIModalPresentationCustom];
+    [matchVC setModalTransitionStyle:UIModalTransitionStyleCrossDissolve];
+    [self presentViewController:matchVC animated:YES completion:nil];
+}
 
 @end

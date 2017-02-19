@@ -23,6 +23,3 @@ pod 'IQKeyboardManager'
 pod 'SIAlertView'
 
 end
-
-
-

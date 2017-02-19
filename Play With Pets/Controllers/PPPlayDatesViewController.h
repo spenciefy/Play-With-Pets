@@ -7,7 +7,17 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "PPPet.h"
 
 @interface PPPlayDatesViewController : UIViewController
+
+@property (strong, nonatomic) PPPet *matchedPet;
+
+@property (strong, nonatomic) IBOutlet UILabel *matchDescriptionLabel;
+@property (strong, nonatomic) IBOutlet UIImageView *profileImageView;
+@property (strong, nonatomic) IBOutlet UIImageView *matchImageView;
+@property (strong, nonatomic) IBOutlet UIButton *meetButton;
+
+- (void) setupMatchScreenWithPet:(PPPet *) pet;
 
 @end
