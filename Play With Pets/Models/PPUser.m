@@ -10,4 +10,38 @@
 
 @implementation PPUser
 
+- (id)initWithID:(NSString *)id name:(NSString *)name age:(NSString *)age gender:(NSString *)gender photoURL:(NSString *)photoURL email:(NSString *)email phoneNumber:(NSString *)phoneNumber location:(NSString *)location {
+    self = [super init];
+    
+    if(self) {
+        self.id = id;
+        self.name = name;
+        self.age = age;
+        self.gender = gender;
+        self.photoURL = photoURL;
+        self.email = email;
+        self.phoneNumber = phoneNumber;
+        self.location = location;
+    }
+    
+    return self;
+}
+
++ (void)getUserWithID:(NSString *)userID completion:(void(^)(PPUser *user))completion
+{
+    [[[[PPAPIManager firebaseRef] child:@"users"] child:userID] observeSingleEventOfType:FIRDataEventTypeValue withBlock:^(FIRDataSnapshot * _Nonnull snapshot) {
+        if(snapshot.value != [NSNull null]) {
+            
+            PPUser *user = [[PPUser alloc] initWithID:snapshot.value[@"id"] name:snapshot.value[@"name"] age:snapshot.value[@"age"] gender:snapshot.value[@"gender"] photoURL:snapshot.value[@"photoURL"] email:snapshot.value[@"email"] phoneNumber:snapshot.value[@"phoneNumber"] location:snapshot.value[@"location"]];
+            
+            completion(user);
+        } else {
+            completion(nil);
+        }
+    } withCancelBlock:^(NSError * _Nonnull error) {
+        NSLog(@"%@", error.localizedDescription);
+        completion(nil);
+    }];
+}
+
 @end

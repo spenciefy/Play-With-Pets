@@ -28,6 +28,8 @@
 		6CB6FBEE1E5912E9003D65EF /* MDCGeometry.m in Sources */ = {isa = PBXBuildFile; fileRef = 6CB6FBEB1E5912E9003D65EF /* MDCGeometry.m */; };
 		6CB6FBEF1E5912E9003D65EF /* UIView+MDCBorderedLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = 6CB6FBED1E5912E9003D65EF /* UIView+MDCBorderedLabel.m */; };
 		6CB6FBF11E59337A003D65EF /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 6CB6FBF01E59337A003D65EF /* GoogleService-Info.plist */; };
+		6CB6FBF41E595103003D65EF /* PPLoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6CB6FBF31E595103003D65EF /* PPLoginViewController.m */; };
+		6CB6FBF71E595354003D65EF /* PPAPIManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 6CB6FBF61E595354003D65EF /* PPAPIManager.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -71,6 +73,10 @@
 		6CB6FBEC1E5912E9003D65EF /* UIView+MDCBorderedLabel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "UIView+MDCBorderedLabel.h"; path = "Categories/UIView+MDCBorderedLabel.h"; sourceTree = "<group>"; };
 		6CB6FBED1E5912E9003D65EF /* UIView+MDCBorderedLabel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "UIView+MDCBorderedLabel.m"; path = "Categories/UIView+MDCBorderedLabel.m"; sourceTree = "<group>"; };
 		6CB6FBF01E59337A003D65EF /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		6CB6FBF21E595103003D65EF /* PPLoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PPLoginViewController.h; path = Controllers/PPLoginViewController.h; sourceTree = "<group>"; };
+		6CB6FBF31E595103003D65EF /* PPLoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PPLoginViewController.m; path = Controllers/PPLoginViewController.m; sourceTree = "<group>"; };
+		6CB6FBF51E595354003D65EF /* PPAPIManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PPAPIManager.h; sourceTree = "<group>"; };
+		6CB6FBF61E595354003D65EF /* PPAPIManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PPAPIManager.m; sourceTree = "<group>"; };
 		75CB7AE50AA2BDBFCC991970 /* libPods-Play With Pets.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Play With Pets.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -117,6 +123,8 @@
 			children = (
 				6C4DE81B1E5904920046B0F2 /* AppDelegate.h */,
 				6C4DE81C1E5904920046B0F2 /* AppDelegate.m */,
+				6CB6FBF51E595354003D65EF /* PPAPIManager.h */,
+				6CB6FBF61E595354003D65EF /* PPAPIManager.m */,
 				6C4DE8211E5904920046B0F2 /* Main.storyboard */,
 				6C4DE8401E5907F90046B0F2 /* Controllers */,
 				6C4DE83E1E5907EC0046B0F2 /* Views */,
@@ -167,6 +175,8 @@
 		6C4DE8401E5907F90046B0F2 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				6CB6FBF21E595103003D65EF /* PPLoginViewController.h */,
+				6CB6FBF31E595103003D65EF /* PPLoginViewController.m */,
 				6C4DE82F1E59073C0046B0F2 /* PPPetsViewController.h */,
 				6C4DE8301E59073C0046B0F2 /* PPPetsViewController.m */,
 				6C4DE8421E5908F90046B0F2 /* PPPlayDatesViewController.h */,
@@ -331,9 +341,11 @@
 			files = (
 				6C4DE8441E5908F90046B0F2 /* PPPlayDatesViewController.m in Sources */,
 				6C4DE8471E5909260046B0F2 /* PPPetDetailViewController.m in Sources */,
+				6CB6FBF41E595103003D65EF /* PPLoginViewController.m in Sources */,
 				6C4DE83D1E5907E90046B0F2 /* PPPetCardView.m in Sources */,
 				6CB6FBEF1E5912E9003D65EF /* UIView+MDCBorderedLabel.m in Sources */,
 				6C4DE81D1E5904920046B0F2 /* AppDelegate.m in Sources */,
+				6CB6FBF71E595354003D65EF /* PPAPIManager.m in Sources */,
 				6C4DE84A1E590A620046B0F2 /* PPShelter.m in Sources */,
 				6C4DE8311E59073C0046B0F2 /* PPPetsViewController.m in Sources */,
 				6C4DE8571E590C510046B0F2 /* UIFont+Play_With_Pets.m in Sources */,

@@ -69,6 +69,7 @@ static CGFloat const MDCSwipeToChooseViewLabelWidth = 65.f;
         self.activitiesLabel.numberOfLines = 1;
         self.activitiesLabel.textAlignment = NSTextAlignmentLeft;
         self.activitiesLabel.textColor = [UIColor whiteColor];
+        self.activitiesLabel.adjustsFontSizeToFitWidth = YES;
         self.activitiesLabel.font = [UIFont pp_fontNamed:PPBodyFontNameMedium size:19.f];
         self.activitiesLabel.text = [NSString stringWithFormat:@"Activities: %@", self.pet.activities];
         [self.activitiesContainerView addSubview:self.activitiesLabel];
@@ -105,7 +106,6 @@ static CGFloat const MDCSwipeToChooseViewLabelWidth = 65.f;
         
         [self updateViewConstraints];
         
-
         dispatch_async(dispatch_get_main_queue(), ^{
             [self constructLikedView];
             [self constructNopeImageView];

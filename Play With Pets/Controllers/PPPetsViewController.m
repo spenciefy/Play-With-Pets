@@ -24,11 +24,36 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
+    [[FIRAuth auth] addAuthStateDidChangeListener:^(FIRAuth *_Nonnull auth,
+                                                    FIRUser *_Nullable user) {
+        if (![PPAPIManager currentUserID]) {
+            [self showLogin];
+        } else {
+            if (user != nil) {
+                static dispatch_once_t once;
+                dispatch_once(&once, ^ {
+                    [PPUser getUserWithID:[[FIRAuth auth] currentUser].uid completion:^(PPUser *user) {
+                        if(user) {
+                            [PPAPIManager shared].currentUser = user;
+                            NSLog(@"Loaded user: %@", user.id);
+                            
+                        }
+                    }];
+                });
+            } else {
+                [self showLogin];
+                
+            }
+        }
+    }];
+    
     self.didFirstLoad = NO;
     [self fetchPets];
-    
-    
-   
+}
+
+- (void)showLogin {
+    [self performSegueWithIdentifier:@"PresentLoginVC" sender:self];
 }
 
 - (void)fetchPets {
@@ -50,7 +75,8 @@
             }
             
             [self.pets addObject:pet];
-           
+            
+            //Hacky to load the initial two pet cards
             if(self.pets.count == 2 && !self.didFirstLoad) {
                 self.didFirstLoad = YES;
                 
@@ -74,16 +100,12 @@
         }
     }];
     
-
-    
 //    PPPet *pet = [[PPPet alloc] initWithID:@"1" petType:PPPetTypeDog name:@"Pupper" age:@"5" size:@"Medium" breed:@"Dog • Boxer • Baby • Female • Medium" bio:@"I am a pupper!" shelter:nil photoURLs:@[@"https://drpem3xzef3kf.cloudfront.net/photos/pets/37443668/1/?bust=1487307367&width=632&no_scale_up=1"] activities:@"Get petted, watch TV" location:@"San Jose, CA"];
 //    
 //    PPPet *pet2 = [[PPPet alloc] initWithID:@"1" petType:PPPetTypeDog name:@"Doggo" age:@"5" size:@"Medium" breed:@"Dog • Boxer • Baby • Female • Medium" bio:@"I am a pupper!" shelter:nil photoURLs:@[@"http://photos.petfinder.com/photos/pets/32264590/1/?bust=1432731635&width=500&-x.jpg"] activities:@"Hiking, Catch" location:@"San Jose, CA"];
 //    
 //    [self.pets addObject:pet];
 //    [self.pets addObject:pet2];
-    
-    
 }
 
 - (void)setFrontPetView:(PPPetCardView *)frontPetView {
