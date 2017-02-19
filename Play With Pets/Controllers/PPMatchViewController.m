@@ -7,6 +7,7 @@
 //
 
 #import "PPMatchViewController.h"
+#import "PPFormViewController.h"
 
 @interface PPMatchViewController ()
 
@@ -53,6 +54,14 @@
 - (IBAction)closeButton:(id)sender
 {
     [self dismissViewControllerAnimated:YES completion:nil];
+}
+
+- (void) prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
+{
+    if ([segue.identifier isEqualToString:@"showForm"]) {
+        PPFormViewController *formVC = (PPFormViewController *) segue.destinationViewController;
+        formVC.matchedPet = self.matchedPet;
+    }
 }
 
 - (void) setupMatchScreenWithPet:(PPPet *) pet
