@@ -34,11 +34,6 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
-		<key>FLAnimatedImage.xcscheme</key>
-		<dict>
-			<key>isShown</key>
-			<false/>
-		</dict>
 		<key>GTMSessionFetcher.xcscheme</key>
 		<dict>
 			<key>isShown</key>
@@ -107,27 +102,17 @@
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
-		<key>02043DD2959AD38584E795000C085A39</key>
+		<key>01F5ECC6D769F215237352017E535968</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>105AF180C7A3B277B31D2385486F43D0</key>
+		<key>09FD9CAD33580EC1B88C8E192EAB09F8</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
 		<key>23E5940AE031597C9ACCEEC373407A61</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>2F32CA9DAD9EF19B35B067B652F2BADB</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>33A72586FE633CDE8DC730A304FC6926</key>
 		<dict>
 			<key>primary</key>
 			<true/>
@@ -142,11 +127,6 @@
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>53F8571E2D572C4069860E38654A566A</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
 		<key>58E7450DB13C5ECCE92D3C0DF7CF0903</key>
 		<dict>
 			<key>primary</key>
@@ -157,17 +137,12 @@
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>85C628AF43C9BF1146E882388702A615</key>
+		<key>637165F00880CAC436D7D8234E10D5BA</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
 		<key>8EEF79168BB96C1DB337C1EAA17911A9</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>94FC6069976137B0A13AD78E1C3CC74D</key>
 		<dict>
 			<key>primary</key>
 			<true/>
@@ -182,12 +157,17 @@
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>C148228B41AB9A63B81543B2D2C87F18</key>
+		<key>DE868725B18AE240E550C5515AE66BC4</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>DE868725B18AE240E550C5515AE66BC4</key>
+		<key>DF451B6F5C015E459BD7183F99712D0C</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>EAEFA4F40BF3F40D9A4F603E675DBFEA</key>
 		<dict>
 			<key>primary</key>
 			<true/>
@@ -197,12 +177,22 @@
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>F66B49E26275963F7D456FCCCD4A0590</key>
+		<key>F764F4B1647F07AAFCBDDB1FE48D9C80</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>F8624BD47C7BD04BD6E6DE211FBFBFA4</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
 		<key>FB06743FD599C11559E52D2D552AEE80</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>FFF896CC5D137C442080A4217970EC81</key>
 		<dict>
 			<key>primary</key>
 			<true/>

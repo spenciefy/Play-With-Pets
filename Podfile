@@ -4,7 +4,6 @@ target 'Play With Pets' do
 
 pod 'MDCSwipeToChoose'
 pod 'BlurImageProcessor'
-pod 'FLAnimatedImage', '~> 1.0'
 pod 'AFNetworking', '~> 2.4'
 pod 'Firebase/Core'
 pod 'Firebase/Auth'

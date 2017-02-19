@@ -14,7 +14,7 @@
             buildForArchiving = "YES">
             <BuildableReference
                BuildableIdentifier = 'primary'
-               BlueprintIdentifier = '02043DD2959AD38584E795000C085A39'
+               BlueprintIdentifier = '09FD9CAD33580EC1B88C8E192EAB09F8'
                BlueprintName = 'PromiseKit-AFNetworking'
                ReferencedContainer = 'container:Pods.xcodeproj'
                BuildableName = 'libPromiseKit-AFNetworking.a'>

@@ -33,7 +33,8 @@
     self.profileImageView.layer.masksToBounds = YES;
     self.profileImageView.layer.borderWidth = 1.5f;
     self.profileImageView.layer.borderColor = [UIColor whiteColor].CGColor;
-    
+    [self.profileImageView sd_setImageWithURL:[NSURL URLWithString:[PPAPIManager shared].currentUser.photoURL]];
+
     self.matchImageView.layer.cornerRadius = self.matchImageView.frame.size.width/2;
     self.matchImageView.layer.masksToBounds = YES;
     self.matchImageView.layer.borderWidth = 1.5f;
